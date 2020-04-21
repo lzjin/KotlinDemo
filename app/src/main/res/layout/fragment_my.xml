@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-     <com.google.android.material.tabs.TabLayout
-         android:id="@+id/tabLayout"
-         android:layout_width="match_parent"
-         android:layout_height="50dp"/>
+<!--     <com.google.android.material.tabs.TabLayout-->
+<!--         android:id="@+id/tabLayout"-->
+<!--         android:layout_width="match_parent"-->
+<!--         android:layout_height="50dp"/>-->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:stateListAnimator="@null"
+        app:tabBackground="@android:color/transparent"
+        app:tabContentStart="0dp"
+        app:tabGravity="center"
+        app:tabIndicatorColor="#FC0100"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="2dp"
+        app:tabMaxWidth="200dp"
+        app:tabMinWidth="10dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="10dp"
+        app:tabPaddingStart="10dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="#FC0100"
+        app:tabTextAppearance="@style/TabLayoutBoldText"
+        app:tabTextColor="#000000" />
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

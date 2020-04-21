@@ -19,8 +19,8 @@ import com.lzj.kotlin.adapter.TabLayoutStatePagerAdapter
 class MyFragment : Fragment() {
     var tabLayout: TabLayout? = null
     var mViewPager: ViewPager? = null
-    var fragments: List<Fragment>?=null
-    var titles :  List<String>?=null
+    var fragments: ArrayList<Fragment>?=null
+    var titles :  ArrayList<String>?=null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,16 +41,15 @@ class MyFragment : Fragment() {
     private fun intTitle() {
         fragments= ArrayList<Fragment>();
         titles= ArrayList<String>();
+
         for (i in 1..9){
-            (titles as ArrayList<String>).plus("科目"+i)
-            (fragments as ArrayList<Fragment>).plus(NewFragment.newInstance("科目"+i,i))
+            titles!!.add("科目"+i)
+            fragments!!.add(NewFragment.newInstance("科目"+i,i))
             tabLayout!!.addTab(tabLayout!!.newTab().setText("科目"+i))
         }
         tabLayout!!.tabGravity = TabLayout.GRAVITY_FILL
-        //1.MODE_SCROLLABLE模式
-        tabLayout!!.setTabMode(TabLayout.MODE_SCROLLABLE)
-        val tabsAdapter  = TabLayoutStatePagerAdapter(childFragmentManager, fragments,
-            titles as ArrayList<String>
+        tabLayout!!.setTabMode(TabLayout.MODE_SCROLLABLE) //1.MODE_SCROLLABLE模式
+        val tabsAdapter  = TabLayoutStatePagerAdapter(childFragmentManager, fragments, titles as ArrayList<String>
         )
          mViewPager!!.adapter = tabsAdapter
          tabLayout!!.setupWithViewPager(mViewPager)
@@ -70,7 +69,9 @@ class MyFragment : Fragment() {
             }
 
         })
-
+        //设置默认
+        val tab = tabLayout!!.getTabAt(2)
+        tabLayout!!.selectTab(tab)
     }
 
     companion object {

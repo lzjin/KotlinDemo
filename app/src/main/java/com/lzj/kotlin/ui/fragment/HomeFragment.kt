@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
         initData()
         initFragment()
         initFragmentTitle()
-
+          var industryList: ArrayList<String> = arrayListOf()
     }
 
     companion object {
@@ -84,7 +84,8 @@ class HomeFragment : Fragment() {
      * 初始化Title
      */
     private fun initData() {
-         mTitleList = ArrayList()
+         mTitleList = arrayListOf()
+
         (mTitleList as ArrayList<String>).add("数学")
         (mTitleList as ArrayList<String>).add("英语")
         (mTitleList as ArrayList<String>).add("物理")
