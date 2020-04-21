@@ -15,4 +15,13 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
+        <!--ripple的颜色-->
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <!--选中时的颜色-->
+        <item name="colorPrimary">#3BEA191D</item>
+        <!--未选中的颜色-->
+        <item name="android:textColorSecondary">#FFFFFF</item>
+    </style>
+
 </resources>
